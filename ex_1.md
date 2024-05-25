@@ -9,6 +9,9 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT lastname, firstname, jobtitle
+	FROM employees
+	WHERE jobtitle = 'Sales Rep';
 ```
 
 Output
@@ -46,6 +49,9 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT lastname, firstname, jobtitle, officeCode
+	FROM employees
+	WHERE jobtitle = 'Sales Rep' AND officeCode = 1;
 ```
 
 Output
@@ -68,6 +74,10 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT firstname, lastname, officeCode
+	FROM employees
+	WHERE officeCode IN (1,2,3)
+	ORDER BY officeCode;
 ```
 
 Output
@@ -99,6 +109,9 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT contactLastname, contactFirstname
+	FROM customers
+	ORDER BY contactLastname DESC, customerNumber ASC;
 ```
 
 Output
@@ -128,6 +141,9 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT lastname, firstname, officeCode
+	FROM employees
+	WHERE officeCode IN (6,7);
 ```
 
 Output
@@ -155,6 +171,9 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT lastname, firstname, jobtitle, officeCode
+	FROM employees
+	WHERE jobtitle = 'Sales Rep' AND officeCode = 1;
 ```
 
 Output
@@ -178,6 +197,9 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT DISTINCT lastname
+	FROM employees
+	ORDER BY lastname;
 ```
 
 Output
@@ -211,6 +233,9 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT customername, country, state
+	FROM customers
+	WHERE state = 'CA';
 ```
 
 Output
@@ -242,6 +267,9 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT customername, country, state, creditlimit
+	FROM customers
+	WHERE creditlimit > 100000 AND state = 'CA';
 ```
 
 Output
@@ -265,6 +293,10 @@ Answer
 
 ```sql
 /* SOME SQL STATEMENT  */
+SELECT DISTINCT employees.officeCode, city, phone, country
+	FROM employees
+		JOIN offices ON (offices.officeCode = employees.officeCode)
+	WHERE country IN('USA', 'France');
 ```
 
 Output
